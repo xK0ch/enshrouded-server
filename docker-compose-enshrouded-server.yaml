@@ -12,10 +12,16 @@ services:
     environment:
       SERVER_NAME: "MLTSF"
       SERVER_PASSWORD: ${SERVER_PASSWORD}
-      SERVER_SLOT_COUNT: "16"
-      SERVER_GAMEPORT: "15636"
+      SERVER_SLOT_COUNT: "5"
       SERVER_QUERYPORT: "15637"
       SERVER_IP: "0.0.0.0"
+      SERVER_GS_PRESET: "Custom"
+      SERVER_GS_RANDOM_SPAWNER_AMOUNT: "Many"
+      SERVER_GS_ENEMY_DAMAGE_FACTOR: "1.5"
+      SERVER_GS_BOSS_HEALTH_FACTOR: "1.5"
+      SERVER_GS_EXPERIENCE_COMBAT_FACTOR: "1.25"
+      SERVER_GS_EXPERIENCE_MINING_FACTOR: "1.25"
+      SERVER_GS_EXPERIENCE_EXPLORATION_QUESTS_FACTOR: "1.25"
       BACKUP_CRON: "*/15 * * * *"
       BACKUP_MAX_COUNT: "10"
       UPDATE_CRON: "*/30 * * * *"
@@ -24,4 +30,4 @@ services:
       PGID: "4711"
       TZ: "Europe/Berlin"
     volumes:
-      - /home/fkoch/enshrouded:/opt/enshrouded
+      - /home/${HOST_USER}/enshrouded:/opt/enshrouded

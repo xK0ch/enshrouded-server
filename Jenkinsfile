@@ -8,6 +8,7 @@ pipeline {
   }
 
   environment {
+    HOST_USER = credentials('ENSHROUDED_HOST_USER')
     SERVER_PASSWORD = credentials('ENSHROUDED_SERVER_PASSWORD')
   }
 
