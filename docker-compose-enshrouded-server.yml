@@ -7,6 +7,10 @@ services:
     stop_grace_period: 90s
     tty: true
     stdin_open: true
+    security_opt:
+      - seccomp=unconfined
+    cap_add:
+      - SYS_PTRACE
     ports:
       - "15637:15637/udp"
     environment:
